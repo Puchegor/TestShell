@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestShell</string>
+    <string name="testChoise">Выберите тест:</string>
+    <string name="rbStudyTopicText">Обучающий тест по теме</string>
+    <string name="rbControlTopicText">Контрольный тест по теме</string>
+    <string name="rbControlSubjectText">Контрольный тест по курсу</string>
+    <string name="btnStartText">Начать</string>
+    <string name="btnCancelText">Отменить</string>
+</resources>
