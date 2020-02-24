@@ -78,8 +78,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnStart:
-                if (rbControlTopic.isChecked() || rbStudyTopic.isChecked() && choise == -1){
-                    Toast.makeText(this, "Необходимо выбрать тему!", Toast.LENGTH_LONG);
+                if (rbControlTopic.isChecked()){
+                    if (choise == -1) {
+                        Toast.makeText(this, "Необходимо выбрать тему!", Toast.LENGTH_LONG).show();
+                        break;
+                    }else{
+
+                    }
                 }
                 break;
             case R.id.btnCancel:
