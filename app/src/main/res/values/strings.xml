@@ -6,4 +6,6 @@
     <string name="rbControlSubjectText">Контрольный тест по курсу</string>
     <string name="btnStartText">Начать</string>
     <string name="btnCancelText">Отменить</string>
+    <string name="btnTestOK">Принять</string>
+    <string name="btnTextNextString">"Пропустить"</string>
 </resources>

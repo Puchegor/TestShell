@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Toast.makeText(this, "Необходимо выбрать тему!", Toast.LENGTH_LONG).show();
                         break;
                     }else{
-
                     }
                 }
                 break;
