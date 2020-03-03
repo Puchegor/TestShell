@@ -2,6 +2,7 @@ package com.elmareos.testshell;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -78,13 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnStart:
-                if (rbControlTopic.isChecked()){
-                    if (choise == -1) {
-                        Toast.makeText(this, "Необходимо выбрать тему!", Toast.LENGTH_LONG).show();
-                        break;
-                    }else{
-                    }
-                }
+                createTest();
                 break;
             case R.id.btnCancel:
                 System.exit(0);
@@ -99,5 +94,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
                 break;
         }
+    }
+
+    private void createTest(){
+        Intent intent = new Intent (this, TestActivity.class);
+        if(rbControlSubject.isChecked()){
+            intent.putExtra("tvTypeOfTest", "Контрольный тест по курсу \"Экономическая теория\"");
+        }
+        startActivity(intent);
     }
 }
