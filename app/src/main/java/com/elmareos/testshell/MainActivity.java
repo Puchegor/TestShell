@@ -50,13 +50,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rbStudyTopic.setOnClickListener(this);
 
         listView = findViewById(R.id.listView);
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<Topic> list = new ArrayList<>();
         try {
             Cursor cursor = db.rawQuery("SELECT * FROM topics", null);
             cursor.moveToFirst();
-            int index = cursor.getColumnIndex("nameTopic");
+            int indexNameTopic = cursor.getColumnIndex("nameTopic");
+            int indexIdTopic = cursor.getColumnIndex("_id");
             while (!cursor.isAfterLast()){
-                list.add(cursor.getString(index));
+                String nameTopic = cursor.getString(indexNameTopic);
+                int idTopic = cursor.getInt(indexIdTopic);
+                Topic topic = new Topic(nameTopic, idTopic);
+                list.add(topic);
                 cursor.moveToNext();
             }
             ArrayAdapter adapter = new ArrayAdapter<>(this, R.layout.list_item, list);
